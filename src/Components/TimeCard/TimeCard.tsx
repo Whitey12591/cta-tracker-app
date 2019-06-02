@@ -26,7 +26,6 @@ const TimeCard = (props: ITimeCardProps) => {
         </div>
         <div>{moment.utc(arrT).format('h:mm a')}</div>
       </div>
-      <div>{timesRefreshed}</div>
     </React.Fragment>
   );
 };
