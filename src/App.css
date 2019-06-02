@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  padding: 10px 10px 10px 30px;
+}
+
+.image {
+  height: 400px;
+}

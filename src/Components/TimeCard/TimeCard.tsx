@@ -22,7 +22,7 @@ const TimeCard = (props: ITimeCardProps) => {
         <div>
           {moment
             .utc(moment(then, 'DD/MM/YYYY HH:mm:ss').diff(moment(now, 'DD/MM/YYYY HH:mm:ss')))
-            .format('m')}
+            .format('m') + ' min'}
         </div>
         <div>{moment.utc(arrT).format('h:mm a')}</div>
       </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'; // let's also import Component
 import axios from 'axios';
 import { RootObject, Eta } from './Data/cta_dto';
 import TimeCard from './Components/TimeCard/TimeCard';
+import devin from './Assets/devin.jpeg';
 import './App.css';
 
 interface IState {
@@ -51,11 +52,12 @@ export class App extends Component<{}, IState> {
       return <div>Loading...</div>;
     } else {
       return (
-        <ul>
+        <div className="app-container">
           {arrivals.ctatt.eta.map((time: Eta, key) => (
             <TimeCard key={key} eta={time} timesRefreshed={timesRefreshed} />
           ))}
-        </ul>
+          <img src={devin} className="image" />
+        </div>
       );
     }
   }

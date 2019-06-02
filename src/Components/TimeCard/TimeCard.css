@@ -5,5 +5,9 @@
   align-items: center;
   height: 50px;
   width: 500px;
-  border: solid 2px red;
+  color: white;
+  background-color: #62361b;
+  border: solid 2px black;
+  margin: 10px 0;
+  padding: 10px 0;
 }
