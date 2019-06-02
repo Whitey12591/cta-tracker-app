@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cta-tracker-app/static/css/main.45ca7a1f.chunk.css",
+    "main.js": "/cta-tracker-app/static/js/main.9efd4337.chunk.js",
+    "main.js.map": "/cta-tracker-app/static/js/main.9efd4337.chunk.js.map",
+    "runtime~main.js": "/cta-tracker-app/static/js/runtime~main.d9195130.js",
+    "runtime~main.js.map": "/cta-tracker-app/static/js/runtime~main.d9195130.js.map",
+    "static/js/2.a487d4a1.chunk.js": "/cta-tracker-app/static/js/2.a487d4a1.chunk.js",
+    "static/js/2.a487d4a1.chunk.js.map": "/cta-tracker-app/static/js/2.a487d4a1.chunk.js.map",
+    "index.html": "/cta-tracker-app/index.html",
+    "precache-manifest.bc74627bd323945409184a27eba4095f.js": "/cta-tracker-app/precache-manifest.bc74627bd323945409184a27eba4095f.js",
+    "service-worker.js": "/cta-tracker-app/service-worker.js",
+    "static/css/main.45ca7a1f.chunk.css.map": "/cta-tracker-app/static/css/main.45ca7a1f.chunk.css.map"
+  }
+}
