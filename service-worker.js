@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cta-tracker-app/precache-manifest.4985d6d24f3ccffbd1ab4d76303bbac8.js"
+  "/cta-tracker-app/precache-manifest.d7fbe48a4e736914dfe4008e7f5a55ca.js"
 );
 
 self.addEventListener('message', (event) => {
