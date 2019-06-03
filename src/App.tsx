@@ -56,7 +56,6 @@ export class App extends Component<{}, IState> {
           {arrivals.ctatt.eta.map((time: Eta, key) => (
             <TimeCard key={key} eta={time} timesRefreshed={timesRefreshed} />
           ))}
-          <img src={devin} className="image" />
         </div>
       );
     }
