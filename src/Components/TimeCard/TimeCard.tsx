@@ -5,11 +5,10 @@ import moment from 'moment';
 
 interface ITimeCardProps {
   eta: Eta;
-  timesRefreshed: number;
 }
 
 const TimeCard = (props: ITimeCardProps) => {
-  const { eta, timesRefreshed } = props;
+  const { eta } = props;
   const { arrT, prdt, destNm } = eta;
 
   var now = moment.utc(prdt).format('DD/MM/YYYY HH:mm:ss');

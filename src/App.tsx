@@ -8,9 +8,9 @@ import './App.css';
 interface IState {
   error: boolean;
   isLoaded: boolean;
-  arrivals: RootObject;
+  loopArrivals: Eta[];
+  kimballArrivals: Eta[];
   time: Date;
-  timesRefreshed: number;
 }
 
 export class App extends Component<{}, IState> {
@@ -19,9 +19,9 @@ export class App extends Component<{}, IState> {
     this.state = {
       error: false,
       isLoaded: false,
-      arrivals: {} as RootObject,
-      time: new Date(),
-      timesRefreshed: 0
+      loopArrivals: [] as Eta[],
+      kimballArrivals: [] as Eta[],
+      time: new Date()
     };
   }
 
@@ -31,10 +31,18 @@ export class App extends Component<{}, IState> {
         `${'https://cors-anywhere.herokuapp.com/'}https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=d4102257b59c4a0a82809fec190a2140&outputType=JSON&mapid=40360`
       )
       .then(result => {
+        const arrivalTimes = result.data.ctatt.eta;
+        const loop = arrivalTimes.filter((eta: Eta, key) => {
+          return eta.destNm === 'Loop';
+        });
+
+        const kimball = arrivalTimes.filter((eta: Eta, key) => {
+          return eta.destNm === 'Kimball';
+        });
         this.setState({
           isLoaded: true,
-          arrivals: result.data,
-          timesRefreshed: this.state.timesRefreshed + 1
+          loopArrivals: loop,
+          kimballArrivals: kimball
         });
       });
   };
@@ -45,18 +53,25 @@ export class App extends Component<{}, IState> {
   }
 
   render() {
-    const { error, isLoaded, arrivals, timesRefreshed } = this.state;
+    const { error, isLoaded, loopArrivals, kimballArrivals } = this.state;
     if (error) {
       return <div>Error: </div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
-        <div className="app-container">
-          {arrivals.ctatt.eta.map((time: Eta, key) => (
-            <TimeCard key={key} eta={time} timesRefreshed={timesRefreshed} />
-          ))}
-        </div>
+        <React.Fragment>
+          <div className="app-container">
+            {loopArrivals.map((time: Eta, key) => (
+              <TimeCard key={key} eta={time} />
+            ))}
+          </div>
+          <div className="app-container">
+            {kimballArrivals.map((time: Eta, key) => (
+              <TimeCard key={key} eta={time} />
+            ))}
+          </div>
+        </React.Fragment>
       );
     }
   }
