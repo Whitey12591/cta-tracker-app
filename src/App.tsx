@@ -2,7 +2,6 @@ import React, { Component } from 'react'; // let's also import Component
 import axios from 'axios';
 import { RootObject, Eta } from './Data/cta_dto';
 import TimeCard from './Components/TimeCard/TimeCard';
-import devin from './Assets/devin.jpeg';
 import './App.css';
 
 interface IState {
