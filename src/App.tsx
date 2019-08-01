@@ -1,8 +1,9 @@
 import React, { Component } from 'react'; // let's also import Component
 import axios from 'axios';
-import { RootObject, Eta } from './Data/cta_dto';
+import { RootObject, Eta, Ctatt } from './Data/cta_dto';
 import TimeCard from './Components/TimeCard/TimeCard';
 import './App.css';
+import { sampleData } from './Assets/sampleData';
 
 interface IState {
   error: boolean;
@@ -46,9 +47,30 @@ export class App extends Component<{}, IState> {
       });
   };
 
+  loadMockData = () => {
+    const response = sampleData;
+    const arrivalTimes = response.ctatt.eta;
+
+    const loop = arrivalTimes.filter((eta: any, key) => {
+      return eta.destNm === 'Loop';
+    });
+
+    const kimball = arrivalTimes.filter((eta: any, key) => {
+      return eta.destNm === 'Kimball';
+    });
+
+    this.setState({
+      isLoaded: true,
+      loopArrivals: loop,
+      kimballArrivals: kimball
+    });
+  };
+
   componentDidMount() {
-    this.loadData();
-    setInterval(this.loadData, 10000);
+    // this.loadData();
+    // setInterval(this.loadData, 10000);
+    this.loadMockData();
+    setInterval(this.loadMockData, 10000);
   }
 
   render() {
