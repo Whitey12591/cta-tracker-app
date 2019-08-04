@@ -67,10 +67,10 @@ export class App extends Component<{}, IState> {
   };
 
   componentDidMount() {
-    // this.loadData();
-    // setInterval(this.loadData, 10000);
-    this.loadMockData();
-    setInterval(this.loadMockData, 10000);
+    this.loadData();
+    setInterval(this.loadData, 10000);
+    // this.loadMockData();
+    // setInterval(this.loadMockData, 10000);
   }
 
   render() {

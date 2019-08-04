@@ -3,11 +3,19 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 50px;
-  width: 500px;
+  height: 150px;
+  width: 100%;
   color: white;
   background-color: #62361b;
   border: solid 2px black;
   margin: 10px 0;
   padding: 10px 0;
+}
+
+.destination {
+  font-size: 5rem;
+}
+
+.time-until {
+  font-size: 3rem;
 }

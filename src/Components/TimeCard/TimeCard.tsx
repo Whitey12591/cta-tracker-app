@@ -17,8 +17,8 @@ const TimeCard = (props: ITimeCardProps) => {
   return (
     <React.Fragment>
       <div className="card-container">
-        <div>{destNm}</div>
-        <div>
+        <div className="destination">{destNm}</div>
+        <div className="time-until">
           {moment
             .utc(moment(then, 'DD/MM/YYYY HH:mm:ss').diff(moment(now, 'DD/MM/YYYY HH:mm:ss')))
             .format('m') + ' min'}
